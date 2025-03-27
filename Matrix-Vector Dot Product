@@ -18,19 +18,25 @@ def matrix_dot_vector(a: list[list[int|float]], b: list[int|float]) -> list[int|
 	# If the number of columns in 'a' does not match the length of 'b', return -1.
 	#pass
 
-    if len(a) == len(b):
-        sol = []
+    if len(a[0]) == len(b):
+        sol = [0]*len(a)
+        print(sol)
         for i in range(len(a)):
             # i = 0~m-1
             c_j = 0
             for j in range(len(a[i])):
                 # j = 0~n-1
                 c_ij = a[i][j] * b[j]
-                c_j += c_ij
-            sol.append(c_j)
+                c_j += c_ij              
+            #sol.append(c_j)
+            sol[i] = c_j
         return sol
     else:
         return -1
+
+matrix = [[1,2],[2,4]]
+vector = [1,2]
+print(matrix_dot_vector(matrix, vector))
 
 
 
