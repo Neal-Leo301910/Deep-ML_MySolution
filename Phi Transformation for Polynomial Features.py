@@ -14,8 +14,8 @@ def phi_transform(data: list[float], degree: int) -> list[list[float]]:
 	  Args:
 	  data (list[float]): A list of numerical values to transform.
 		degree (int): The degree of the polynomial expansion.
-
-	"""
+    X(Phi) = 1 + x + x^2 + x^3 + .... + x^d
+    """
 
     if degree < 0:
         return []
