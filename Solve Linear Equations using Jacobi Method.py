@@ -2,7 +2,13 @@
 Write a Python function that uses the Jacobi method to solve a system of linear equations given by Ax = b. 
 The function should iterate n times, rounding each intermediate solution to four decimal places, 
 and return the approximate solution x.
+
+The Jacobi method is an iterative algorithm used for solving a system of linear equations ( Ax = b ). 
+This method is particularly useful for large systems where direct methods, 
+such as Gaussian elimination, are computationally expensive.
 '''
+
+
 
 import numpy as np
 def solve_jacobi(A: np.ndarray, b: np.ndarray, n: int) -> list:
@@ -15,12 +21,12 @@ where ( a_{ii} ) are the diagonal elements of ( A ), and ( a_{ij} ) are the off-
 '''
 
     x= np.zeros(len(b))
-    a_ii = np.diag(A)
-    a_ij = A - np.diag(a_ii)
+    a_ii = np.diag(A) #获得对角线元素
+    a_ij = A - np.diag(a_ii) #获得非对角线元素
     x_hold = np.zeros(len(b))
-    for _ in range(n):
+    for _ in range(n):#实现n次迭代
         for i in range(len(A)):
-            x_hold[i] = (1/a_ii[i]) * (b[i] - sum(a_ij[i]*x))
-        x = x_hold.copy()
+            x_hold[i] = (1/a_ii[i]) * (b[i] - sum(a_ij[i]*x)) # Jacob Method 更新该迭代次数下的x值
+        x = x_hold.copy() #将原本的x值复写
         
     return np.round(x,4).tolist()
