@@ -14,29 +14,25 @@ cn = am1*b1+am2*b2+...amn*bn
 
 
 def matrix_dot_vector(a: list[list[int|float]], b: list[int|float]) -> list[int|float]:
-	# Return a list where each element is the dot product of a row of 'a' with 'b'.
-	# If the number of columns in 'a' does not match the length of 'b', return -1.
-	#pass
+# Return a list where each element is the dot product of a row of 'a' with 'b'.
+# If the number of columns in 'a' does not match the length of 'b', return -1.
 
-    if len(a[0]) == len(b):
-        sol = [0]*len(a)
-        print(sol)
-        for i in range(len(a)):
-            # i = 0~m-1
-            c_j = 0
-            for j in range(len(a[i])):
-                # j = 0~n-1
-                c_ij = a[i][j] * b[j]
-                c_j += c_ij              
-            #sol.append(c_j)
-            sol[i] = c_j
-        return sol
-    else:
+    if len(a[0]) != len(b):
         return -1
+    
+    dot = []
+    
+    for row in range(len(a)):
+        sum_row = 0
+        for col in range(len(a[0])):
+            sum_row += (a[row][col] * b[col])
+        dot.append(sum_row)
+        
+    return dot
 
-matrix = [[1,2],[2,4]]
-vector = [1,2]
-print(matrix_dot_vector(matrix, vector))
+print(matrix_dot_vector([[1, 2, 3], [2, 4, 5], [6, 8, 9]], [1, 2, 3]))
+print(matrix_dot_vector([[1, 2], [2, 4], [6, 8], [12, 4]], [1, 2, 3]))
+print(matrix_dot_vector([[1.5, 2.5], [3.0, 4.0]], [2, 1]))
 
 
 
