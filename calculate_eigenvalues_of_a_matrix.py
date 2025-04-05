@@ -19,5 +19,6 @@ def calculate_eigenvalues(matrix: list[list[float|int]]) -> list[float]:
     return eigenvalues
 
 
-matrix = [[2, 1], [1, 2]]
-calculate_eigenvalues(matrix)
+print(calculate_eigenvalues([[2, 1], [1, 2]]))
+
+print(calculate_eigenvalues([[4, -2], [1, 1]]))
