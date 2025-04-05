@@ -13,6 +13,7 @@ def translate_object(points, tx, ty):
 
 translated_points = [x+x_t, y+y_t]
 '''
+    # concise version
     trans_arr = [tx,ty]
 
     translated_points = []
@@ -22,7 +23,27 @@ translated_points = [x+x_t, y+y_t]
     
     return translated_points
 
+
+    # trans_matrix = np.eye(3)
+    # trans_matrix[:,2] += [tx,ty,0]
+    # translated_points = []
+    # for point in points:
+
+    #     homo_cord = point + [1]
+    #     mid = np.dot(trans_matrix,homo_cord).tolist()
+    #     translated_points.append(mid[0:2])
+  
+    # return translated_points
+
+
+triangle = [[0, 0], [1, 0], [0.5, 1]] 
+tx, ty = 2, 3 
+print(translate_object(triangle, tx, ty))
+
+square = [[0, 0], [1, 0], [1, 1], [0, 1]] 
+tx, ty = -1, 2 
+print(translate_object(square, tx, ty))
+
 points = [[0, 0], [1, 0], [0.5, 1]]
 tx, ty = 2, 3
-
 print(translate_object(points, tx, ty))
