@@ -18,7 +18,13 @@ v = [3, 4]
 L = [1, 0]
 print(orthogonal_projection(v, L))
     
-    
+v = [1, 2, 3] 
+L = [0, 0, 1] 
+print(orthogonal_projection(v, L))    
+
+v = [5, 6, 7] 
+L = [2, 0, 0] 
+print(orthogonal_projection(v, L))
 
 
 
