@@ -28,3 +28,5 @@ def inverse_2x2(matrix: list[list[float]]) -> list[list[float]]:
         inverse = np.dot(inver_det, adjugate)
 
     return inverse
+
+
