@@ -44,9 +44,11 @@ def phi_transform(data: list[float], degree: int) -> list[list[float]]:
             print(powers)
     
         return results.tolist()
-    
-    
-data = [1.0, 2.0], 
-degree = 2
-phi_transform(data, degree)
+
+print(phi_transform([], 2))
+print(phi_transform([1.0, 2.0], -1))
+print(phi_transform([1.0, 2.0], 2))
+print(phi_transform([1.0, 3.0], 3))
+print(phi_transform([2.0], 4))
+
 
