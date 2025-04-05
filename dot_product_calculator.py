@@ -12,3 +12,13 @@ def calculate_dot_product(vec1, vec2):
         float: Dot product of the two vectors.
     """
     return np.dot(vec1, vec2)
+
+print(calculate_dot_product(np.array([1, 2, 3]), np.array([4, 5, 6])))
+
+print(calculate_dot_product(np.array([-1, 2, 3]), np.array([4, -5, 6])))
+
+print(calculate_dot_product(np.array([1, 0]), np.array([0, 1])))
+
+print(calculate_dot_product(np.array([0, 0, 0]), np.array([0, 0, 0])))
+
+print(calculate_dot_product(np.array([7]), np.array([3])))
