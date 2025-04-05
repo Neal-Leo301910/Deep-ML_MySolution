@@ -11,3 +11,6 @@ def transform_basis(B: list[list[int]], C: list[list[int]]) -> list[list[float]]
     #C_inverse = np.linalg.inv(C)
     #P = np.dot(C_inverse,B)
     return np.dot(np.linalg.inv(C),B)
+
+print(transform_basis([[1, 0, 0], [0, 1, 0], [0, 0, 1]], [[1, 2.3, 3], [4.4, 25, 6], [7.4, 8, 9]]))
+print(transform_basis([[1,0],[0,1]],[[1,2],[9,2]]))
