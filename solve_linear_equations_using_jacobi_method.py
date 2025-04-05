@@ -30,3 +30,7 @@ where ( a_{ii} ) are the diagonal elements of ( A ), and ( a_{ij} ) are the off-
         x = x_hold.copy() #将原本的x值复写
         
     return np.round(x,4).tolist()
+
+print(solve_jacobi(np.array([[5, -2, 3], [-3, 9, 1], [2, -1, -7]]), np.array([-1, 2, 3]),2))
+print(solve_jacobi(np.array([[4, 1, 2], [1, 5, 1], [2, 1, 3]]), np.array([4, 6, 7]),5))
+print(solve_jacobi(np.array([[4,2,-2],[1,-3,-1],[3,-1,4]]), np.array([0,7,5]),3))
