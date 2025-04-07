@@ -37,3 +37,8 @@ def k_fold_cross_validation(X: np.ndarray, y: np.ndarray, k=5, shuffle=True, ran
         current += fold_size
 
     return [(np.concatenate(folds[:i] + folds[i+1:]).tolist(), folds[i].tolist()) for i in range(k)] #返回[x,y]，训练集和测试集，存储的是数据集的indices。
+
+print(k_fold_cross_validation(np.array([0,1,2,3,4,5,6,7,8,9]), np.array([0,1,2,3,4,5,6,7,8,9]), k=5, shuffle=False))
+print(k_fold_cross_validation(np.array([0,1,2,3,4,5,6,7,8,9]), np.array([0,1,2,3,4,5,6,7,8,9]), k=2, shuffle=True, random_seed=42))
+print(k_fold_cross_validation(np.array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]), np.array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]), k=3, shuffle=False))
+print(k_fold_cross_validation(np.array([0,1,2,3,4,5,6,7,8,9]), np.array([0,1,2,3,4,5,6,7,8,9]), k=2, shuffle=False))
